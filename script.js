@@ -1,4 +1,3 @@
-//Arrays gerais iniciais
 const meusCursos = [
     {
     curso:"HTML e CSS",
@@ -19,6 +18,7 @@ const meusCursos = [
     valor:2000
     }
 ];
+
 const minhasTurmas = [
     {
     turma:"Hipátia",
@@ -93,7 +93,6 @@ const minhasTurmas = [
     concluida:false
     } 
 ];
-
 
 const alunos = [
     {
@@ -170,3 +169,10 @@ const alunos = [
     }
     
 ];
+
+const parcelarCurso=(parcela) =>{
+    if(parcela <= 2){
+    const valorComDesconto = meusCursos[0].valor -(0.20)
+    console.log(`O curso HTML e CSS ficou no valor total de R$:${valorComDesconto}. Foi concedido desconto de 20%.`)}
+}
+parcelarCurso(1)
