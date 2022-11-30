@@ -176,3 +176,21 @@ const parcelarCurso=(parcela) =>{
     console.log(`O curso HTML e CSS ficou no valor total de R$:${valorComDesconto}. Foi concedido desconto de 20%.`)}
 }
 parcelarCurso(1)
+
+const buscarCurso = (nomeDoCurso)=>{
+    if(meusCursos.includes(nomeDoCurso)){
+        console.log("Há o curso")
+    }else{
+        console.log("Não há")
+    }
+}
+const buscarTurma = (turma)=>{
+    minhasTurmas.includes()
+}
+
+const buscarAluno = (aluno)=>{
+    meusAlunos.nome.includes(aluno)
+}
+
+buscarCurso(HTML)
+console.log(buscarCurso)
