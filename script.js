@@ -1,4 +1,4 @@
-const meusCursos = [
+const cursos = [
     {
     curso:"HTML e CSS",
     descricao:"Estilize sua página Web de forma profissional e atraia mais clientes!",
@@ -19,7 +19,7 @@ const meusCursos = [
     }
 ];
 
-const minhasTurmas = [
+const turmas = [
     {
     turma:"Hipátia",
     curso:"JavaScript",
@@ -94,7 +94,7 @@ const minhasTurmas = [
     } 
 ];
 
-const alunos = [
+const estudantes = [
     {
     estudante:"Chris Evans",
     turma:"Hipátia",
@@ -171,8 +171,41 @@ const alunos = [
 ];
 
 const parcelarCurso=(parcela) =>{
+    let valorTotal 
+    let valorParcela 
     if(parcela <= 2){
-    const valorComDesconto = meusCursos[0].valor -(0.20)
-    console.log(`O curso HTML e CSS ficou no valor total de R$:${valorComDesconto}. Foi concedido desconto de 20%.`)}
+        let valorTotal = cursos[0].valor - (cursos[0].valor*0.20)
+        let valorParcela = valorTotal/parcela
+        console.log(`O curso ${cursos[0].curso} ficou no valor total de R$:${valorTotal}. Em ${parcela}x de R$:${valorParcela}. Foi concedido desconto de 20%.`)
+    } else {
+        let valorTotal = cursos[0].valor
+        let valorParcela = valorTotal/parcela
+        console.log(`O curso ${cursos[0].curso} ficou no valor total de R$:${valorTotal}. Em ${parcela}x de R$:${valorParcela}.`)
+    }
 }
-parcelarCurso(1)
+parcelarCurso(2)
+
+const buscarCurso = (nomeCurso) =>{
+    for (cadaCurso of cursos){
+        if(cadaCurso.curso == nomeCurso){
+            return cadaCurso
+        }
+
+    }
+}
+
+const buscarTurma = (nomeTurma) =>{
+    for (cadaTurma of turmas){
+        if(cadaTurma.turma == nomeTurma){
+            return cadaTurma
+        }
+    }
+}
+
+const buscarEstudante = (nomeEstudante) =>{
+    for (cadaEstudante of estudantes){
+        if(cadaEstudante.estudante == nomeEstudante){
+            return cadaEstudante
+        }
+    }
+}
