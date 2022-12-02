@@ -21,7 +21,7 @@ const cursos = [
 
 const turmas = [
     {
-    turma:"Hipátia",
+    turma:"Hipatia",
     curso:"JavaScript",
     inicio:"30/11/2022",
     termino:"30/01/2023",
@@ -209,3 +209,33 @@ const buscarEstudante = (nomeEstudante) =>{
         }
     }
 }
+
+console.log(buscarCurso("JavaScript"))
+
+const matricular = (nome, curso, turma, numeroParcelas) => {
+    let valorCurso = buscarCurso(curso)
+    let valorTotal = 0
+    let valorPorParcela = 0
+    desconto = false
+    if(numeroParcelas >0 && numeroParcelas <=2){
+        valorTotal = valorTotal - (valorCurso.valor *0.2)
+        valorPorParcela = valorTotal/ numeroParcelas
+        desconto = true 
+    }else{
+        valorTotal = valorCurso.valor
+        valorPorParcela = valorTotal/numeroParcelas
+    }
+    let novoAluno = {
+       estudante: nome,
+       turma: turma ,
+       curso: curso,
+       valor: valorCurso.valor,
+       nParcelas: numeroParcelas,
+       desconto: desconto,
+       valorParcelas: valorPorParcela 
+    }
+
+    estudantes.push(novoAluno)
+}
+
+matricular(juliana, JavaScript, Hipatia, 5)
