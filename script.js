@@ -172,7 +172,20 @@ const alunos = [
 
 const parcelarCurso=(parcela) =>{
     if(parcela <= 2){
-    const valorComDesconto = meusCursos[0].valor -(0.20)
-    console.log(`O curso HTML e CSS ficou no valor total de R$:${valorComDesconto}. Foi concedido desconto de 20%.`)}
+        valor = meusCursos[0].valor
+        valorComDesconto = valor*0.8
+        console.log(`O curso HTML e CSS ficou no valor total de R$:${valorComDesconto}. Em ${parcela}x de R$:${valorComDesconto/parcela}. Foi concedido desconto de 20%.`)}
+    else{
+        console.log(`O curso HTML e CSS ficou no valor total de R$:500, em ${parcela}x de R$:${500/parcela}.`)
+    }
 }
-parcelarCurso(1)
+parcelarCurso(4)
+
+buscarCurso = (curso) =>{
+    for(obj of meusCursos){
+        if ()
+        console.log(curso)
+    }
+    
+}
+buscarCurso(JavaScript)
