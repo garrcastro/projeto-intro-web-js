@@ -1,3 +1,4 @@
+//Array de cursos disponíveis:
 const cursos = [
     {
     curso:"HTML e CSS",
@@ -19,6 +20,7 @@ const cursos = [
     }
 ];
 
+//Array de turmas disponíveis:
 const turmas = [
     {
     turma:"Hipatia",
@@ -94,6 +96,7 @@ const turmas = [
     } 
 ];
 
+//Array de estudantes matriculados:
 const estudantes = [
     {
     estudante:"Chris Evans",
@@ -170,6 +173,7 @@ const estudantes = [
     
 ];
 
+//Função de simulação de parcelas e valores dos descontos:
 const parcelarCurso=(parcela) =>{
     let valorTotal 
     let valorParcela 
@@ -183,8 +187,10 @@ const parcelarCurso=(parcela) =>{
         console.log(`O curso ${cursos[0].curso} ficou no valor total de R$:${valorTotal}. Em ${parcela}x de R$:${valorParcela}.`)
     }
 }
+
 parcelarCurso(2)
 
+//Função para Procurar Curso dentre os disponíveis:
 const buscarCurso = (nomeCurso) =>{
     for (cadaCurso of cursos){
         if(cadaCurso.curso == nomeCurso){
@@ -194,6 +200,7 @@ const buscarCurso = (nomeCurso) =>{
     }
 }
 
+//Função para procurar turma dentre as disponíveis:
 const buscarTurma = (nomeTurma) =>{
     for (cadaTurma of turmas){
         if(cadaTurma.turma == nomeTurma){
@@ -202,6 +209,7 @@ const buscarTurma = (nomeTurma) =>{
     }
 }
 
+//Função para buscar estudantes dentre os matrículados:
 const buscarEstudante = (nomeEstudante) =>{
     for (cadaEstudante of estudantes){
         if(cadaEstudante.estudante == nomeEstudante){
@@ -212,6 +220,7 @@ const buscarEstudante = (nomeEstudante) =>{
 
 console.log(buscarCurso("JavaScript"))
 
+//Função para matricular um novo estudante:
 const matricular = (nome, curso, turma, numeroParcelas) => {
     let valorCurso = buscarCurso(curso)
     let valorTotal = 0
@@ -236,6 +245,7 @@ const matricular = (nome, curso, turma, numeroParcelas) => {
     }
 
     estudantes.push(novoAluno)
+    console.log(estudantes)
 }
+matricular("jose","JavaScript","Hipatia",1)
 
-matricular(juliana, JavaScript, Hipatia, 5)
