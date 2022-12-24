@@ -1,0 +1,76 @@
+html{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Cabeçalho geral */
+header{
+    background-color: #FBFBFB;
+    position: absolute;
+    width: 1920px;
+    height: 152px;
+    left:0px;
+    top:0px;
+}
+
+/* Logo do Cabeçalho */
+.logo-header{
+position: absolute;
+width: 349px;
+height: 75px;
+left: 255px;
+top: 39px;
+background: url(logo.png);
+}
+
+/* Menu geral do Cabeçalho */
+.menu-header{ 
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    padding: 0px;
+    gap: 75px;
+    position: absolute;
+    width:609px;
+    height:36px;
+    left:1056px;
+    top:58px;
+}
+
+/* Características da fonte do Menu do Cabeçalho*/
+.link-menu{
+    text-decoration: none;
+    color:#0E0E0E;
+    font-family:'Poppins';
+    font-style:normal;
+    font-weight:700;
+    font-size:24px;
+    line-height:36px;    
+    height:36px;
+}
+
+/* Comportamento do texto do Menu do Cabeçalho ao interagir */
+#link-menu-ativo{
+    text-decoration: underline;
+}
+.link-menu:visited{
+    color:#0E0E0E
+}
+.link-menu:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+main{
+    background-color: #000000;
+}
+
+footer{
+    background-color: #F6C34A;
+}
