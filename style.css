@@ -2,24 +2,31 @@ html{
     font-family: 'Poppins', sans-serif;
 }
 
+*{
+    margin:0;
+    padding: 0;
+}
+
 /* Cabeçalho geral */
 header{
     background-color: #FBFBFB;
-    position: absolute;
-    width: 1920px;
-    height: 152px;
-    left:0px;
-    top:0px;
+    display: grid;
+    width: 100vw;
+    height: 20vh;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
+    grid-template-rows: 1fr;
 }
 
 /* Logo do Cabeçalho */
 .logo-header{
-position: absolute;
-width: 349px;
-height: 75px;
-left: 255px;
-top: 39px;
-background: url(logo.png);
+    width: 40%;
+    display: flex;
+    justify-self: center;
+    align-self: center;
+    grid-column: 1/2;
+    grid-row: 1/2;
 }
 
 /* Menu geral do Cabeçalho */
@@ -27,13 +34,11 @@ background: url(logo.png);
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    padding: 0px;
+    padding: 2em;
+    padding-left: 4em;
     gap: 75px;
-    position: absolute;
-    width:609px;
-    height:36px;
-    left:1056px;
-    top:58px;
+    grid-column: 2/3;
+    grid-row: 1/2;
 }
 
 /* Características da fonte do Menu do Cabeçalho*/
@@ -41,11 +46,10 @@ background: url(logo.png);
     text-decoration: none;
     color:#0E0E0E;
     font-family:'Poppins';
-    font-style:normal;
     font-weight:700;
-    font-size:24px;
-    line-height:36px;    
-    height:36px;
+    font-size:1em;
+    justify-content: center;    
+    align-items: center;
 }
 
 /* Comportamento do texto do Menu do Cabeçalho ao interagir */
@@ -69,8 +73,78 @@ background: url(logo.png);
 
 main{
     background-color: #000000;
+    display: flex;
+    height: 80vh;
+    width: 100vw;
 }
 
 footer{
+    
     background-color: #F6C34A;
+    
+    padding: 10em;
+    width: 100vw;
+    height: 60vh;
+    box-sizing: border-box;
+    text-decoration: none;
+    
+    
+}
+.itens-do-footer{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: 1fr auto;
+    gap: 0 5em;
+    list-style-type: none;
+    height: 80vh;    
+}
+.texto-rodape{
+    text-decoration: none;
+    color:#0E0E0E;
+    font-family:'Poppins';
+    font-size:0.7em;
+    justify-content: left;
+    padding: 0.5em;
+    display: flex;
+}
+.logo-footer{
+    grid-row: 1/2;
+    grid-column: 1/2;
+    justify-self: start;
+    align-self: center;
+    width: 40%;
+    
+    
+}
+
+li{
+    padding: 1em 0
+}
+h3{
+    font-size: 1em;
+    font-weight: 700;
+}
+
+.mapinha{
+    border: 2px solid black;
+}
+
+.primeira-coluna{
+    grid-column: 1/2;
+    grid-row: 2/3;
+}
+
+.segunda-coluna{
+    grid-column: 2/3;
+    grid-row: 2/3;
+}
+
+.terceira-coluna{
+    grid-column: 3/4;
+    grid-row: 2/3;
+}
+
+.quarta-coluna{
+    grid-column: 4/5;
+    grid-row: 2/3;
 }
