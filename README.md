@@ -31,7 +31,11 @@ Recomendamos que caso não lembre como funciona o processo de entrega, clique [*
 Bom projeto para vocês!
 
 ----------------------------------------------------------------------------------------------------------
+Link do Surge:
+https://garr-castro.surge.sh
 
+Link do Git pages:
+https://garrcastro.github.io/projeto-intro-web-js/index.html
 
 -HTML e CSS refeitos do zero entre 23/01 e 03/02;
 -Javascript básico feito no decorrer das aulas do módulo Fundamentos;
