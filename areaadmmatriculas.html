@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./script.js" defer></script>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,30 +19,57 @@
                 <ul class="menu-header">
                     <a class="link-menu" href="index.html">Home</a>
                     <a class="link-menu" href="cursos.html">Cursos</a>
-                    <a class="link-menu" id="link-menu-ativo" href="contato.html">Contato</a>
-                    <a class="link-menu" href="areaadmturmas.html">Área ADM</a>
+                    <a class="link-menu"  href="contato.html">Contato</a>
+                    <a class="link-menu" id="link-menu-ativo" href="areaadmturmas.html">Área ADM</a>
                 </ul>
             </nav>
         </section>
-        <img class="icone-whatsapp" src="./assets/logos_whatsapp-icon.png">
+        <img class="icone-whatsapp">
     </header>
     <main>
-        <section id="contato-geral">
-            <article id="contato-card">
-                <h3 id="contato-titulo">Fale Conosco</h3>
-                <form id="contato-inputs">
-                    <label for ="nome" class="texto-inputs">Nome</label>
-                    <input type="text" id="nome" name="nome">
-                    <label for ="email" class="texto-inputs">Email</label>
-                    <input type="text" id="email" name="email">
-                    <label for="mensagem" class="texto-inputs">Mensagem</label>
-                    <textarea id="mensagem" name="mensagem" rows="4" cols="30"></textarea>
-                </form>
+        <section id="areaadm-geral">
+            <nav id="lateral-areaadm">
+                <ul class="menu-areaadm">
+                    <a class="link-menu-adm"  href="./areaadmturmas.html">Turmas</a>
+                    <a class="link-menu-adm" id="link-menu-adm-ativo" href="./areaadmmatriculas.html">Matrículas</a>
+                    <a class="link-menu-adm" href="./areaadmfinanceiro.html">Financeiro Alunos</a>
+                </ul>
+            </nav>
+            <section id="areaadm-principal-matricula">
                 
-                <a href="#" id="contato-botao">Enviar</a>
-            </form>
+                    <form id="form-de-matricula">
+                        <h3>Matrículas</h3>
+                        <label for="nome-aluno">Nome</label>
+                        <input type="text" name="nome-aluno" id="nome-aluno">
+                        <label for="nome-curso">Curso</label>
+                        <input type="text" name="nome-curso" id="nome-curso">
+                        <label for="nome-turma">Turma</label>
+                        <input type="text" name="nome-turma" id="nome-turma">
+                        <label for="numero-parcelas">Número de parcelas</label>
+                        <input type="number" name="numero-parcelas" id="numero-parcelas" value="1">
+                        <input onclick="matricularAluno()" onclick="mudarEstado('aluno-matriculado-oculto')" type="button" name="matricular" id="matricular" value="Matricular Aluno">
+                    </form>
+                
+                <div id="aluno-matriculado-oculto">
+                    <h3>Aluno Matriculado!</h3>
+                    <img src="./assets/ok.png" id="imgok">
+                    <div id="texto-matriculado">
+                    <p>Aluno Matriculado</p>
+                    
+                        <p>Nome: 
+                        <span id="nome-do-matriculado"></span></p>
+                    
+                    
+                        <p>Curso: 
+                        <span id="curso-do-matriculado"></span></p>
+                    
+                    
+                        <p>Turma: 
+                        <span id="turma-do-matriculado"></span></p>
+                    </div>
+                </div>
+            </section>
         </section>
-        
     </main>
     <footer>
         <section class="rodape">
@@ -75,5 +103,4 @@
         </section>
     </footer>
 </body>
-
 </html>

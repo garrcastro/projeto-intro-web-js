@@ -4,184 +4,168 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Área ADM</title>
-    <script src="/script.js"></script>
-    <link href="style.css" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="./script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <title>Labescola</title>
 </head>
 <body>
     <header>
-        <img class="logo-header" src="/assets/logo.png" alt="Logo da Labescola">
-        
-        <nav>
-            <ul class="menu-header">
-                <a class="link-menu" href="index.html">Home</a>
-                <a class="link-menu" href="cursos.html">Cursos</a>
-                <a class="link-menu" href="contato.html">Contato</a>
-                <a class="link-menu" id="link-menu-ativo" href="areaadmturmas.html">Área ADM</a>
-            </ul>
-        </nav>
+        <section class="cabecalho">
+            <img class="logo-header" src="/assets/logo.png" alt="Logo da Labescola">
+            <nav>
+                <ul class="menu-header">
+                    <a class="link-menu" href="index.html">Home</a>
+                    <a class="link-menu" href="cursos.html">Cursos</a>
+                    <a class="link-menu"  href="contato.html">Contato</a>
+                    <a class="link-menu" id="link-menu-ativo" href="areaadmturmas.html">Área ADM</a>
+                </ul>
+            </nav>
+        </section>
         <img class="icone-whatsapp">
-
     </header>
     <main>
-        <aside>
-            <nav>
-                <p class="texto-menu-lateral">Turmas</p>
-                <p class="texto-menu-lateral">Matrículas</p>
-                <p class="texto-menu-lateral">Financeiro Alunos</p>
+        <section id="areaadm-geral">
+            <nav id="lateral-areaadm">
+                <ul class="menu-areaadm">
+                    <a class="link-menu-adm" id="link-menu-adm-ativo" href="./areaadmturmas.html">Turmas</a>
+                    <a class="link-menu-adm" href="./areaadmmatriculas.html">Matrículas</a>
+                    <a class="link-menu-adm" href="./areaadmfinanceiro.html">Financeiro Alunos</a>
+                </ul>
             </nav>
-        </aside>
-        <section>
-            <input placeholder="Digite o número da turma">
-            <button>Buscar</button>
-            <table>
-                <tr>
-                    <td>
-                        <article class="card-turmas">
-                            <h3>Hipátia</h3>
-                            <p><b>Curso:</b> Javascript</p>
-                            <p><b>Início:</b>30/11/2022</p>
-                            <p><b>Término:</b>30/01/2023</p>
-                            <p><b>Número de alunos:</b>150</p>
-                            <p><b>Período:</b>Noturno</p>
-                            <p><b>Concluído:</b>Não</p>
-                        </article>
-                    </td>
-                    <td>
-                        <article class="card-turmas">
-                            <h3>Sibyla</h3>
-                            <p><b>Curso:</b> Javascript</p>
-                            <p><b>Início:</b>30/10/2022</p>
-                            <p><b>Término:</b>30/12/2022</p>
-                            <p><b>Número de alunos:</b>200</p>
-                            <p><b>Período:</b>Integral</p>
-                            <p><b>Concluído:</b>Não</p>
-                        </article>
-                    </td>
-                    <td>
-                        <article class="card-turmas">
-                            <h3>Curie</h3>
-                            <p><b>Curso:</b>HTML e CSS</p>
-                            <p><b>Início:</b>15/09/2022</p>
-                            <p><b>Término:</b>15/10/2022</p>
-                            <p><b>Número de alunos:</b>180</p>
-                            <p><b>Período:</b>Noturno</p>
-                            <p><b>Concluído:</b>Não</p>
-                        </article>
-                    </td>               
-                    <td>
-                        <article class="card-turmas">
-                            <h3>Zhenyi</h3>
-                            <p><b>Curso:</b>HTML e CSS</p>
-                            <p><b>Início:</b>01/11/2022</p>
-                            <p><b>Término:</b>01/01/2023</p>
-                            <p><b>Número de alunos:</b>80</p>
-                            <p><b>Período:</b>Integral</p>
-                            <p><b>Concluído:</b>Não</p>
-                        </article>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <article class="card-turmas">
-                            <h3>Clarke</h3>
-                            <p><b>Curso:</b>HTML e CSS</p>
-                            <p><b>Início:</b>04/07/2022</p>
-                            <p><b>Término:</b>04/09/2023</p>
-                            <p><b>Número de alunos:</b>200</p>
-                            <p><b>Período:</b>Noturno</p>
-                            <p><b>Concluído:</b>sIM</p>
-                        </article>
-                    </td>
+            <section id="areaadm-principal-turma">
+                <div id="campobuscar">
+                    <input type="text" id="nome-da-turma" name="nome-da-turma" placeholder="Digite o nome da turma" value= >
+                    <button class="botao-de-acao" id="botao-de-buscar-turma" onclick="procurarTurma()">Buscar</button>
+                </div>
+                <div id="resultado-turma">
+                    <div class="card-busca-turma">
+                    <h4>Hipátia</h4>
+                    <ol>
+                    <li><b>Curso:</b> Javascript</li>
+                    <li><b>Início:</b> 30/11/2022</li>
+                    <li><b>Término:</b> 30/01/2023</li>
+                    <li><b>Número de alunos:</b> 150</li>
+                    <li><b>Período:</b> noturno</li>
+                    <li><b>Concluído:</b> Sim</li>
+                    </ol>
+                    </div>
+                    <div class="card-busca-turma">
+                    <h4>Sibyla</h4>
+                    <ol>
+                    <li><b>Curso:</b> Javascript</li>
+                    <li><b>Início:</b> 30/10/2022</li>
+                    <li><b>Término:</b> 30/12/2022</li>
+                    <li><b>Número de alunos:</b> 200</li>
+                    <li><b>Período:</b> integral</li>
+                    <li><b>Concluído:</b> Sim</li>
+                    </ol>
+                    </div>
+                    <div class="card-busca-turma">
+                    <h4>Curie</h4>
+                    <ol>
+                    <li><b>Curso:</b> HTML e CSS</li>
+                    <li><b>Início:</b> 15/09/2022</li>
+                    <li><b>Término:</b> 15/10/2022</li>
+                    <li><b>Número de alunos:</b> 180</li>
+                    <li><b>Período:</b> noturno</li>
+                    <li><b>Concluído:</b> Sim</li>
+                    </ol>
+                    </div>
+                    <div class="card-busca-turma">
+                    <h4>Zhenyi</h4>
+                    <ol>
+                    <li><b>Curso:</b> HTML e CSS</li>
+                    <li><b>Início:</b> 01/11/2022</li>
+                    <li><b>Término:</b> 01/01/2023</li>
+                    <li><b>Número de alunos:</b> 80</li>
+                    <li><b>Período:</b> integral</li>
+                    <li><b>Concluído:</b> Sim</li>
+                    </ol>
+                    </div>
+                    <div class="card-busca-turma">
+                    <h4>Clarke</h4>
+                    <ol>
+                    <li><b>Curso:</b> HTML e CSS</li>
+                    <li><b>Início:</b> 04/07/2022</li>
+                    <li><b>Término:</b> 04/09/2022</li>
+                    <li><b>Número de alunos:</b> 200</li>
+                    <li><b>Período:</b> noturno</li>
+                    <li><b>Concluído:</b> Sim</li>
+                    </ol>
+                    </div>
+                    <div class="card-busca-turma">
+                    <h4>Blackwell</h4>
+                    <ol>
+                    <li><b>Curso:</b> APIsRest</li>
+                    <li><b>Início:</b> 20/03/2022</li>
+                    <li><b>Término:</b> 20/06/2022</li>
+                    <li><b>Número de alunos:</b> 100</li>
+                    <li><b>Período:</b> integral</li>
+                    <li><b>Concluído:</b> Sim</li>
+                    </ol>
+                    </div>
+                    <div class="card-busca-turma">
+                    <h4>Elion</h4>
+                    <ol>
+                    <li><b>Curso:</b> APIsRest</li>
+                    <li><b>Início:</b> 12/01/2022</li>
+                    <li><b>Término:</b> 12/06/2022</li>
+                    <li><b>Número de alunos:</b> 200</li>
+                    <li><b>Período:</b> noturno</li>
+                    <li><b>Concluído:</b> Sim</li>
+                    </ol>
+                    </div>
+                    <div class="card-busca-turma">
+                    <h4>Burnell</h4>
+                    <ol>
+                    <li><b>Curso:</b> APIsRest</li>
+                    <li><b>Início:</b> 18/10/2022</li>
+                    <li><b>Término:</b> 18/04/2023</li>
+                    <li><b>Número de alunos:</b> 90</li>
+                    <li><b>Período:</b> integral</li>
+                    <li><b>Concluído:</b> Sim</li>
+                    </ol>
+                    </div>
+                </div>
                 
+                    
                 
-                    <td>
-                        <article class="card-turmas">
-                            <h3>Blackwell</h3>
-                            <p><b>Curso:</b>APIs Rest</p>
-                            <p><b>Início:</b>20/03/2022</p>
-                            <p><b>Término:</b>20/06/2022</p>
-                            <p><b>Número de alunos:</b>100</p>
-                            <p><b>Período:</b>Integral</p>
-                            <p><b>Concluído:</b>Sim</p>
-                        </article>
-                    </td>
-                
-                
-                    <td>
-                        <article class="card-turmas">
-                            <h3>Elion</h3>
-                            <p><b>Curso:</b>APIs Rest</p>
-                            <p><b>Início:</b>12/01/2022</p>
-                            <p><b>Término:</b>12/06/2022</p>
-                            <p><b>Número de alunos:</b>200</p>
-                            <p><b>Período:</b>Noturno</p>
-                            <p><b>Concluído:</b>Sim</p>
-                        </article>
-                    </td>
-                
-                
-                    <td>
-                        <article class="card-turmas">
-                            <h3>Burnell</h3>
-                            <p><b>Curso:</b>APIs Rest</p>
-                            <p><b>Início:</b>18/10/2022</p>
-                            <p><b>Término:</b>18/04/2023</p>
-                            <p><b>Número de alunos:</b>90</p>
-                            <p><b>Período:</b>Integral</p>
-                            <p><b>Concluído:</b>Não</p>
-                        </article>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <article class="card-turmas">
-                            <h3>Hipátia</h3>
-                            <p><b>Curso:</b> Javascript</p>
-                            <p><b>Início:</b>30/11/2022</p>
-                            <p><b>Término:</b>30/01/2023</p>
-                            <p><b>Número de alunos:</b>150</p>
-                            <p><b>Período:</b>Noturno</p>
-                            <p><b>Concluído:</b>Não</p>
-                        </article>
-                    </td>
-                </tr>
-
-            </table>
+            </section>
         </section>
     </main>
     <footer>
-        <ul>
-            <li>
-                <img class="logo-footer">
-                <h3>Endereço</h3>
-                <map></map>
-                <p class="texto-rodape">R. Pais Leme, 215. CEP 05424-150 - Pinheiros</p>
-            </li>
-            <li>
-                <h3>Links</h3>
-                <p class="texto-rodape"><a href="cursos.html">Cursos</a></p>
-                <p class="texto-rodape"><a href="index.html">Home</a></p>
-                <p class="texto-rodape"><a href="#">Blog</a></p>
-                <p class="texto-rodape"><a href="contato.html">Fale conosco</a></p>
-                <p class="texto-rodape"><a href="#">Termos e condições</a></p>
-                <p class="texto-rodape"><a href="#">Política de privacidade</a></p>
-                <p class="texto-rodape"><a href="#">FAQ</a></p>
-            </li>
-            <li>
-                <h3>Redes sociais</h3>
-                <img class="icone-redes-sociais">
-                <img class="icone-redes-sociais">
-                <img class="icone-redes-sociais">
-                <img class="icone-redes-sociais">
-            </li>
-            <li>
-                <h3>Área restrita</h3>
-                <p class="texto-rodape"><a href="areaadm.html">Área administrativa</a></p>
-                <p class="texto-rodape"><a href="#">Área do aluno</a></p>
-            </li>
-        </ul>
+        <section class="rodape">
+            <img class="logo-footer" src="/assets/Frame 2.png" alt="Logo da Labescola">
+            <nav class="colunas-footer">
+                <li class="primeira-coluna-footer">
+                    <h3>Endereço</h3>
+                    <iframe class="mapinha" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1828.4981727141728!2d-46.6995992242796!3d-23.568574737684262!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce57a7c7ace4c3%3A0x586759cab9b5c95a!2sR.%20Pais%20Leme%2C%20215%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2005424-150!5e0!3m2!1spt-BR!2sbr!4v1673817700252!5m2!1spt-BR!2sbr" width="300" height="200" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <p class="texto-rodape">R. Pais Leme, 215. CEP 05424-150 - Pinheiros</p>
+                </li>
+                <li class="segunda-coluna-footer">
+                    <h3>Links</h3>
+                    <a href="cursos.html" class="texto-rodape">Cursos</a>
+                    <a href="index.html" class="texto-rodape">Home</a>
+                    <a href="#"class="texto-rodape">Blog</a>
+                    <a href="contato.html" class="texto-rodape">Fale conosco</a>
+                    <a href="#" class="texto-rodape">Termos e condições</a>
+                    <a href="#" class="texto-rodape">Política de privacidade</a>
+                    <a href="#" class="texto-rodape">FAQ</a>
+                </li>
+                <li class="terceira-coluna-footer">
+                    <h3>Redes sociais</h3>
+                    <img src="./assets/Frame 3.png" alt="Ícones das redes sociais" href="#">
+                </li>
+                <li class="quarta-coluna-footer">
+                    <h3>Área restrita</h3>
+                    <a href="areaadmturmas.html" class="texto-rodape">Área administrativa</a>
+                    <a href="#" class="texto-rodape">Área do aluno</a>
+                </li>
+            </nav>
+        </section>
     </footer>
 </body>
 </html>

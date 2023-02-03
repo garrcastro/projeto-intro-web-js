@@ -20,6 +20,7 @@ const cursos = [
     }
 ];
 
+
 //Array de turmas disponíveis:
 const turmas = [
     {
@@ -173,10 +174,73 @@ const estudantes = [
     
 ];
 
+
+let carrinhoCursos = []
+
+const adicionarCurso = () =>{
+    carrinhoCursos.push(buscarCurso().valor)
+}
+const buscaCurso = () =>{
+    let nomeCurso = document.getElementById('nome-curso').value
+    let infoCurso = cursos.find(function(infoCurso){
+        return infoCurso.curso.toLowerCase() === nomeCurso
+    })
+    console.log(infoCurso)
+    
+    
+    return buscaCurso
+}
+
+
+const parcelarCurso = () =>{
+    let parcelamento = document.getElementById('resultado-parcela-oculto')
+    parcelamento.innerHTML = ''
+    let numParcela = document.getElementById('numero-de-parcelas').value
+    let totalCursos = 0
+    let somaCursos = carrinhoCursos.reduce(function(total, numero){
+        return total + numero
+    }, 0)
+    let valorParcela = somaCursos/numParcela
+    if(numParcela > 0 && numParcela <= 2){
+        totalCursos = somaCursos * 0.8
+        valorParcela = totalCursos/numParcela
+        switch (carrinhoCursos.length){
+            case 1: 
+                html =  `O valor do pagamento é de R$ ${totalCursos}, em ${numParcela}x de R$ ${valorParcela} com 20% de desconto`
+                break;
+            case 2:
+                html = `O valor do pagamento é de R$ ${totalCursos * 0.9} com 20% + 10% de desconto, parcelado em ${numParcela}x de R$ ${valorParcela * 0.9}`
+                break;
+            default:
+                html = `O valor do pagamento é de R$ ${totalCursos * 0.85} com 20% + 15% de desconto, parcelado em ${numParcela}x de R$ ${valorParcela * 0.85}`
+                break;
+        }
+    }else{
+        switch (carrinhoCursos.length) {
+            case 1: 
+                html = `O valor do pagamento é de R$ ${somaCursos}, em ${numParcela}x de R$ ${valorParcela}`   
+                break;
+            case 2:
+                html = `O valor do pagamento é de R$ ${somaCursos * 0.9} com 10% de desconto, parcelado em ${numParcela}x de R$ ${valorParcela * 0.9}`
+                break;
+            default:
+                html =  `O valor do pagamento é de R$ ${somaCursos * 0.85} com 15% de desconto, parcelado em ${numParcela}x de R$ ${valorParcela * 0.85}`
+                break;
+        }
+    }
+    if (carrinhoCursos.length == 0){
+        alert("Adicione um curso no carrinho para calcular o valor")
+    }else{
+        parcelamento.innerHTML += `<h3>Valor</h3>${html}`
+    }
+    
+}
+
 //Função de simulação de parcelas e valores dos descontos:
-const parcelarCurso=(parcela) =>{
-    let valorTotal 
-    let valorParcela 
+/* const parcelarCurso=(parcela) =>{
+    console.log('entrou')
+    let valorTotal
+    let valorParcela
     if(parcela <= 2){
         let valorTotal = cursos[0].valor - (cursos[0].valor*0.20)
         let valorParcela = valorTotal/parcela
@@ -188,40 +252,104 @@ const parcelarCurso=(parcela) =>{
     }
 }
 
-parcelarCurso(2)
+parcelarCurso(2) */
+
+
 
 //Função para Procurar Curso dentre os disponíveis:
-const buscarCurso = (nomeCurso) =>{
+/* const buscarCurso = (nomeCurso) =>{
     for (cadaCurso of cursos){
-        if(cadaCurso.curso == nomeCurso){
+        if(cadaCurso.curso.toLowerCase() == nomeCurso.toLowerCase()){
+            return cadaCurso
+        }
+    }
+} */
+
+const buscarCurso = (nomeCurso) => {
+    const mostrarCurso = cursos.find((cadaCurso) => {
+        if (cadaCurso.curso.toLowerCase() === nomeCurso.toLowerCase()) {
             return cadaCurso
         }
 
-    }
+    })
+    return mostrarCurso
 }
+
 
 //Função para procurar turma dentre as disponíveis:
 const buscarTurma = (nomeTurma) =>{
     for (cadaTurma of turmas){
-        if(cadaTurma.turma == nomeTurma){
+        if(cadaTurma.turma.toLowerCase() === nomeTurma.toLowerCase()){
             return cadaTurma
+        } else {
+            alert('Turma não encontrada.')
         }
-    }
+    } 
 }
+
+
+
+
+
+const procurarTurma = function (){
+    const retornarTurma = document.getElementById("nome-da-turma").value.toLowerCase()
+    document.getElementById("nome-da-turma").value = ''
+    console.log(buscarTurma(retornarTurma))
+    
+}
+
+
+
+//Essa função procurarTurma (pega o valor do input/apaga) vai se juntar a outra função pra pesquisar no array turma, provavelmente a função buscar turma. e com a função pra mostrar o resultado na tela (dom). pra mostrar esse resultado, provavelmente eu crie um novo array com filter
+
+
 
 //Função para buscar estudantes dentre os matrículados:
-const buscarEstudante = (nomeEstudante) =>{
+/* const buscarEstudante = (nomeEstudante) =>{
     for (cadaEstudante of estudantes){
-        if(cadaEstudante.estudante == nomeEstudante){
+        if(cadaEstudante.estudante.toLowerCase() === nomeEstudante.toLowerCase()){
             return cadaEstudante
         }
+     
     }
+} */
+
+buscarAluno = () =>{
+
+    let nomeAluno = document.getElementById("nome-aluno").value
+    
+    const relatorioAlunoOculto = document.getElementById("relatorio-aluno-oculto")
+    
+    let resultado = estudantes.filter(elemento => elemento.estudante.toLowerCase().includes(nomeAluno.toLowerCase()))
+
+    
+    console.log(relatorioAlunoOculto)
+    console.log(resultado)
+    
+    
+        const html = `<div id="relatorio-aluno-oculto">
+        <p>Aluno: ${resultado[0].estudante}</p>
+        <p>Turma: ${resultado[0].turma}</p> 
+        <p>Curso: ${resultado[0].curso}</p> 
+        <p>Valor Total: ${resultado[0].valor}</p>
+        <p>Valor Parcela: R$${resultado[0].parcelas}</p>   
+        <p>Nº parcelas:${resultado[0].nParcelas}</p>   
+        <div/>`
+        
+    
+     
+    
+    relatorioAlunoOculto.innerHTML = ""
+    relatorioAlunoOculto.innerHTML += html
+    nomeAluno.value = ''
+        
 }
 
-console.log(buscarCurso("JavaScript"))
+
 
 //Função para matricular um novo estudante:
-const matricular = (nome, curso, turma, numeroParcelas) => {
+
+/* const matricular = (nome, curso, turma, numeroParcelas) => {
     let valorCurso = buscarCurso(curso)
     let valorTotal = 0
     let valorPorParcela = 0
@@ -246,6 +374,27 @@ const matricular = (nome, curso, turma, numeroParcelas) => {
 
     estudantes.push(novoAluno)
     console.log(estudantes)
-}
-matricular("jose","JavaScript","Hipatia",1)
+} */
+/* matricular("jose","JavaScript","Hipatia",1) */
 
+
+
+
+
+const matricularAluno = () =>{
+    let novoAluno ={
+        estudante: document.getElementById('nome-aluno').value,
+        turma: document.getElementById('nome-turma').value,
+        curso: document.getElementById('nome-curso').value
+    }
+    document.getElementById('nome-do-matriculado').innerHTML += document.getElementById('nome-aluno').value
+    document.getElementById('turma-do-matriculado').innerHTML += document.getElementById('nome-turma').value
+    document.getElementById('curso-do-matriculado').innerHTML += document.getElementById('nome-curso').value
+    document.getElementById('nome-aluno').value = ''
+    document.getElementById('nome-turma').value = ''
+    document.getElementById('nome-curso').value = ''
+    estudantes.push(novoAluno)
+    console.log(estudantes)
+    document.getElementById('aluno-matriculado-oculto').style.setProperty('display','flex')
+    
+}

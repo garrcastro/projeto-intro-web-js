@@ -30,3 +30,14 @@ Recomendamos que caso não lembre como funciona o processo de entrega, clique [*
 
 Bom projeto para vocês!
 
+----------------------------------------------------------------------------------------------------------
+
+
+-HTML e CSS refeitos do zero entre 23/01 e 03/02;
+-Javascript básico feito no decorrer das aulas do módulo Fundamentos;
+-Tentativas de Funções Callback, funções de Array e DOM entre 30/01 e 03/02, com ajuda dos colegas e revisão das aulas gravadas;
+-Não foi implementada a funcionalidade de pesquisar dentre as turmas (a página está estática com os cards) e o botão está em loop "turma não encontrada";
+-A funcionalidade de matrícula está funcionando de maneira básica (mostrando os dados passados pelo input);
+-O cálculo do preço dos cursos no carrinho e aplicação de desconto não está implementada;
+-O relatório de aluno está funcionando superficialmente. Consegue buscar dentre os alunos matrículados, contudo não mostra o alerta de "aluno não encontrado", mostrando o primeiro objeto do array, se a busca for vazia;
+-Todo o código(HTML, CSS e JS) está cheio de anotações, esboços, pensamentos e tentativas, precisando ser "enxuto" e melhor organizado no decorrer das próximas semanas.

@@ -1,22 +1,40 @@
-html{
-    font-family: 'Poppins', sans-serif;
+/* Informações comuns para todas as páginas */
+:root{
+    --fonte-preta-principal: #0E0E0E;
+    --fonte-branca-principal: #FBFBFB;
+    --fundo-amarelo: #F6C34A;
+    --fonte-principal: 'Poppins';
 }
 
 *{
-    margin:0;
+    margin: 0;
     padding: 0;
 }
 
+html{
+    font-family: 'Poppins';
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.icone-whatsapp{
+    position: fixed;
+    right: 5em;
+    bottom: 4em;
+}
+/*-----------------------------------------------------------------------------------------*/
 /* Cabeçalho geral */
-header{
-    background-color: #FBFBFB;
+
+.cabecalho{
+    background-color: var(--fonte-branca-principal);
     display: grid;
     width: 100vw;
-    height: 20vh;
     justify-content: center;
     align-items: center;
     grid-template-columns: repeat(2,1fr);
     grid-template-rows: 1fr;
+    box-sizing: border-box;
+    margin: 2em;
 }
 
 /* Logo do Cabeçalho */
@@ -27,6 +45,7 @@ header{
     align-self: center;
     grid-column: 1/2;
     grid-row: 1/2;
+    box-sizing: border-box;
 }
 
 /* Menu geral do Cabeçalho */
@@ -34,8 +53,8 @@ header{
     list-style-type: none;
     display: flex;
     flex-direction: row;
-    padding: 2em;
-    padding-left: 4em;
+    padding: em;
+    box-sizing: border-box;
     gap: 75px;
     grid-column: 2/3;
     grid-row: 1/2;
@@ -44,107 +63,492 @@ header{
 /* Características da fonte do Menu do Cabeçalho*/
 .link-menu{
     text-decoration: none;
-    color:#0E0E0E;
-    font-family:'Poppins';
+    color: var(--fonte-preta-principal);
     font-weight:700;
-    font-size:1em;
     justify-content: center;    
     align-items: center;
+    box-sizing: border-box;
 }
 
 /* Comportamento do texto do Menu do Cabeçalho ao interagir */
-#link-menu-ativo{
+#link-menu-ativo {
     text-decoration: underline;
 }
 .link-menu:visited{
-    color:#0E0E0E
+    color: var(--fonte-preta-principal);
 }
 .link-menu:hover{
     text-decoration: underline;
 }
 
-
-
-
-
-
-
-
-
-main{
-    background-color: #000000;
+/*--------------------------------------------------------------------------------------------------*/
+/* Primeira parte da main da página index */
+#inicial-primeira-parte{
+    background-image: url(./assets/background-hero.png);
+    background-color: var(--fundo-amarelo);
+    background-size: contain;
+    height: 70vh;
     display: flex;
-    height: 80vh;
-    width: 100vw;
+    flex-direction: column;
+    text-align: center;
 }
 
-footer{
-    
-    background-color: #F6C34A;
-    
-    padding: 10em;
-    width: 100vw;
-    height: 60vh;
-    box-sizing: border-box;
-    text-decoration: none;
-    
-    
-}
-.itens-do-footer{
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    grid-template-rows: 1fr auto;
-    gap: 0 5em;
-    list-style-type: none;
-    height: 80vh;    
-}
-.texto-rodape{
-    text-decoration: none;
-    color:#0E0E0E;
-    font-family:'Poppins';
-    font-size:0.7em;
-    justify-content: left;
-    padding: 0.5em;
-    display: flex;
-}
-.logo-footer{
-    grid-row: 1/2;
-    grid-column: 1/2;
-    justify-self: start;
-    align-self: center;
-    width: 40%;
-    
-    
+/* Título da primeira parte */
+#inicial-titulo{
+    font-size: 2.5em;
 }
 
-li{
-    padding: 1em 0
+/* Texto da primeira parte */
+#inicial-paragrafo{
+    font-size: 1.5em;
 }
-h3{
-    font-size: 1em;
+
+/* Título e texto da primeira parte */
+#inicial-textos{
+    margin-top: 10em;
+    margin-bottom: 5em;
+}
+
+/* Botão da primeira parte */
+#inicial-botao{
+    text-decoration: none;
+    color: var(--fonte-branca-principal);
+    background-color:var(--fonte-preta-principal);
+    padding: 1em;
+    border-radius: 7px;
     font-weight: 700;
+    width: fit-content;
+    align-self: center;    
 }
 
-.mapinha{
-    border: 2px solid black;
+/* Segunda parte da main da página index*/
+#inicial-segunda-parte{
+    background-color: var(--fonte-preta-principal);
+    color: var(--fonte-branca-principal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-.primeira-coluna{
+/* Título da segunda parte */
+.inicial-titulo-secundario{
+    padding: 2em;
+}
+
+/* Texto da segunda parte */
+#inicial-sobre-nos{
+    padding: 0 15em 6em;
+    text-align: justify;
+}
+
+/* Terceira parte da main da página index */
+#inicial-terceira-parte{
+    background-color: var(--fonte-preta-principal);
+    color: var(--fonte-branca-principal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Geral dos cards de depoimento */
+#inicial-cards-depoimentos{
+    display: flex;
+    column-gap: 1.5em;
+    margin: 0 10em 8em;
+}
+
+/* Card individual */
+.card{
+    display: grid;
+    background-color: var(--fonte-branca-principal);
+    color: var(--fonte-preta-principal);
+    border-radius: 5px;
+    padding: 1.5em; 
+    justify-items: center;
+}
+
+/* Texto dos depoimentos */
+.inicial-depoimentos{
+    font-size: 12px;
+    text-align: justify;
+    margin-top: 2em;
+}
+
+/* -------------------------------------------------------------------------------- */
+
+/* Primeira parte da main da página cursos*/
+
+#cursos-primeira-parte{
+    background-color: var(--fundo-amarelo);
+    color: var(--fonte-preta-principal);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Card dos cursos */
+#cursos-cards{
+    display: flex;
+    column-gap: 1.5em;
+    margin: 3em 5em 1em;
+    padding: 5em;
+    column-gap: 5em;
+}
+
+/* Botão dos cursos */
+#cursos-botao{
+    text-decoration: none;
+    color: var(--fonte-branca-principal);
+    background-color:var(--fonte-preta-principal);
+    padding: 1em 4em;
+    border-radius: 7px;
+    font-weight: 700;
+    width: fit-content;
+    align-self: center;
+    margin-bottom: 5em;
+}
+
+/* Segunda parte da main da página cursos*/
+
+#cursos-segunda-parte{
+    background-color: var(--fonte-preta-principal);
+    color: var(--fonte-branca-principal);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Cards da segunda parte */
+#cursos-cards-segunda-parte{
+    display: flex;
+    flex-direction: column;
+    column-gap: 1.5em;
+    margin: 3em 5em 1em;
+    padding: 5em;
+    column-gap: 5em;
+}
+
+/* Cards individuais da segunda parte */
+.cards-segunda-parte{
+    display: grid;
+    background-color: var(--fonte-branca-principal);
+    color: var(--fonte-preta-principal);
+    border-radius: 10px;
+    justify-items: center;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: auto auto;
+    margin: 2em 15em 0.5em;
+}
+
+/*Título dos cards secundários da página cursos */
+
+.cursos-titulo-card-secundario{
     grid-column: 1/2;
-    grid-row: 2/3;
+    grid-row: 1/3;
+    justify-self: center;
+    align-self: center;
 }
 
-.segunda-coluna{
+.cursos-titulo2-card-secundario{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: flex-start;
+    padding: 1em 0;
+}
+.cursos-titulo3-card-secundario{
+    grid-column: 3/4;
+    grid-row: 1/2;
+    align-self: center;
+    justify-self: flex-start;
+}
+.cursos-texto-card{
     grid-column: 2/3;
     grid-row: 2/3;
+    padding-bottom: 2em;
+    align-self: flex-start;
+    font-size: 0.8em;
 }
-
-.terceira-coluna{
+.cursos-texto2-card{
     grid-column: 3/4;
     grid-row: 2/3;
+    font-size: 0.8em;
+
 }
 
-.quarta-coluna{
-    grid-column: 4/5;
-    grid-row: 2/3;
+/* ------------------------------------------------------------ */
+
+#contato-geral{
+    background-color: var(--fonte-preta-principal);
+    color: var(--fonte-branca-principal);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
 }
+
+#contato-card{
+    display: flex;
+    flex-direction: column;
+    column-gap: 1.5em;
+    margin: 3em 5em 1em;
+    padding: 2em;
+    column-gap: 5em;
+    background-color: var(--fonte-branca-principal);
+    color: var(--fonte-preta-principal);
+    border-radius: 5px;
+    justify-content: flex-start;
+    align-content: flex-start;
+}
+
+#contato-inputs{
+    display: flex;
+    flex-direction: column;
+}
+
+#contato-titulo{
+    padding: 0.5em;
+    display: flex;
+    justify-self: flex-start;
+}
+.texto-inputs{
+    font-size: smaller;
+    font-weight: 700;
+}
+#nome, #email {
+    width: 20em;
+    border-radius: 3px;
+    height: 2em;
+}
+#mensagem {
+    border-radius: 3px;
+}
+
+#contato-botao{
+    text-decoration: none;
+    color: var(--fonte-preta-principal);
+    background-color:var(--fundo-amarelo);
+    padding: 1em 4em;
+    border-radius: 7px;
+    font-weight: 700;
+    width: ;
+    align-self: center;
+    margin: 1em 0 ;
+}
+
+/*------------------------------------------------------------------------------------*/
+
+#areaadm-geral{
+    background-color: var(--fonte-preta-principal);
+    height: 90vh;
+    width: 100vw;
+    display: flex;
+    box-sizing: border-box;
+}
+
+#lateral-areaadm{
+    height: 100%;
+    width: 20%;
+    background-color: var(--fonte-preta-principal);
+    box-sizing: border-box;
+    display: flex;
+    
+}
+
+.menu-areaadm{
+    display: flex;
+    flex-direction: column;
+    margin: 3em 0 0 7em;
+    row-gap: 2em;
+    box-sizing: border-box;
+}
+
+#areaadm-principal, #areaadm-principal-matricula, #areaadm-principal-turma, #areaadm-principal-financeiro{
+    background-color: var(--fundo-amarelo);
+    height: 100%;
+    width: 80%;
+    box-sizing: border-box;
+}
+
+.link-menu-adm{
+    text-decoration: none;
+    color: gray;
+    font-weight:700;
+    justify-content: center;    
+    align-items: center;
+    box-sizing: border-box;
+}
+
+#link-menu-adm-ativo{
+    color: var(--fonte-branca-principal);
+    
+}
+
+.rodape{
+    background-color: var(--fundo-amarelo);
+    padding: 2em 10em;
+    border-top: solid 2px black;
+}
+
+.colunas-footer{
+    display: flex;
+    column-gap: 6em;
+}
+
+.primeira-coluna-footer, .segunda-coluna-footer, .terceira-coluna-footer, .quarta-coluna-footer{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    row-gap: 1em;
+    font-size: smaller;
+}
+
+.texto-rodape{
+    text-decoration: none;
+    color: var(--fonte-preta-principal);
+}
+
+/*-----------------------------------------------------------------------*/
+
+#areaadm-geral{
+    height: auto;
+    width: auto;
+
+}
+#areaadm-principal-turma{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+#campobuscar{
+    margin: 2em;
+    
+}
+
+#nome-da-turma, #nome-aluno, #nome-curso, #nome-turma, #numero-parcelas, #numero-de-parcelas{
+    border: none;
+    width: 18em;
+    height: 2em;
+}
+
+#botao-de-buscar-turma, #matricular{
+    background-color: var(--fonte-preta-principal);
+    color: var(--fonte-branca-principal);
+    border-radius: 3px;
+    height: 2em;
+    width: 5em;
+}
+
+#resultado-turma{
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.card-busca-turma{
+    background-color: var(--fonte-branca-principal);
+    padding: 1em;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    
+    margin: 1em;
+    
+}
+
+ol{
+    list-style-type: none;
+}
+.titulo-card-busca-turma{
+    align-self: center;
+}
+
+.resultado-turma{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 4em 5em;
+    gap: 2em;
+    align-items: center;
+    justify-content: center;
+}
+.curso-card-busca-turma, .inicio-card-busca-turma, .termino-card-busca-turma, .n-alunos-card-busca-turma, .periodo-card-busca-turma, .concluido-card-busca-turma{
+    
+    font-size: smaller;
+    
+    
+}
+.texto-card{
+    font-size: smaller;
+    
+}
+/*---------------------------------------------------------------*/
+
+#form-de-matricula{
+    display: flex;
+    flex-direction: column;
+    margin: 2em 10em;
+}
+#areaadm-principal-matricula{
+    display: flex;
+     
+}
+
+#matricular{
+    width: 18em;
+    margin: 1em 0;
+}
+
+#aluno-matriculado-oculto{
+    display: none;
+    width: 20em;
+    height:fit-content;
+    
+    flex-wrap: wrap;
+    margin: 2em;
+    
+}
+
+#texto-matriculado{
+    
+}
+
+/*----------------------------------------------------------------------*/
+#areaadm-principal-financeiro{
+    display: flex;
+    
+}
+
+#adm-financeiro{
+    display: flex;
+    flex-direction: column;
+    margin: 2.5em 8.5em;
+    row-gap: 1em;
+}
+
+#botao-adicionar-curso, #botao-ver-valor, #botao-buscar-aluno{
+    background-color: var(--fonte-preta-principal);
+    color: var(--fonte-branca-principal);
+    border-radius: 5px;
+    height: 2em;
+    width: 18em;
+    
+}
+
+
+#adm-relatorio-aluno{
+    display: flex;
+    flex-direction: column;
+    margin: 2.5em 8.5em;
+    row-gap: 0.9em;
+}
+
+
+
